@@ -119,5 +119,10 @@ public class Main
 
 		printAnimals(allAnimals, a -> a.getYear() == 1758);
 
+		System.out.println();
+		System.out.println("List alphabetically all mammals");
+		System.out.println();
+
+		printAnimals(allAnimals, a -> a instanceof Mammal);
 	}
 } 
