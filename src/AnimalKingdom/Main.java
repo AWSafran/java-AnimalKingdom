@@ -97,5 +97,11 @@ public class Main
 		System.out.println();
 
 		printAnimals(allAnimals, a -> a.breath() == "lungs");
+
+		System.out.println();
+		System.out.println("List animals that use lungs and were named in 1758");
+		System.out.println();
+
+		printAnimals(allAnimals, a -> (a.breath() == "lungs") && (a.getYear() == 1758));
 	}
 } 
