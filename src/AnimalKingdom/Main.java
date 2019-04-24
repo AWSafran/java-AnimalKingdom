@@ -103,5 +103,21 @@ public class Main
 		System.out.println();
 
 		printAnimals(allAnimals, a -> (a.breath() == "lungs") && (a.getYear() == 1758));
+
+		System.out.println();
+		System.out.println("List animals that use lungs and lay eggs");
+		System.out.println();
+
+		printAnimals(allAnimals, a -> (a.breath() == "lungs") && (a.reproduce() == "eggs"));
+
+		System.out.println();
+		System.out.println("List animals that were named in 1758 alphabetically");
+		System.out.println();
+
+		//Need to re-order list alphabetically
+		allAnimals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+
+		printAnimals(allAnimals, a -> a.getYear() == 1758);
+
 	}
 } 
