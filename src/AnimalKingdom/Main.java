@@ -5,6 +5,18 @@ import java.util.Comparator;
 
 public class Main
 {
+
+	public static void printAnimals(ArrayList<AbstractAnimal> animals, CheckAnimal tester)
+	{
+		for (AbstractAnimal a : animals)
+		{
+			if (tester.test(a))
+			{
+				System.out.println(a.getName());
+			}
+		}
+	}
+
 	public static void main(String[] args)
 	{
 		//Creating animals
@@ -68,5 +80,22 @@ public class Main
 		{
 			System.out.println(a.getName());
 		}
+
+		System.out.println();
+		System.out.println("List all animals in order of movement");
+		System.out.println();
+
+		allAnimals.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
+
+		for(AbstractAnimal a : allAnimals)
+		{
+			System.out.println(a.getName() + " moves by " + a.move() + "ing");
+		}
+
+		System.out.println();
+		System.out.println("List animals that use lungs");
+		System.out.println();
+
+		printAnimals(allAnimals, a -> a.breath() == "lungs");
 	}
 } 
