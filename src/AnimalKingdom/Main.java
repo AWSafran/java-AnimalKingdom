@@ -1,6 +1,7 @@
 package AnimalKingdom;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Main
 {
@@ -42,5 +43,21 @@ public class Main
 		allAnimals.add(salmon);
 		allAnimals.add(catfish);
 		allAnimals.add(perch);
+
+		// for(AbstractAnimal a : allAnimals)
+		// {
+		// 	System.out.println(a.getName());
+		// }
+
+		System.out.println();
+		System.out.println("List all animals in descending order by year named");
+		System.out.println();
+
+		allAnimals.sort((a1, a2) -> a2.getYear() - a1.getYear());
+
+		for(AbstractAnimal a : allAnimals)
+		{
+			System.out.println(a.getYear() + ": " + a.getName());
+		}
 	}
 } 

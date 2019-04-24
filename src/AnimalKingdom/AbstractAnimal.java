@@ -1,6 +1,6 @@
 package AnimalKingdom;
 
-public class AbstractAnimal
+public abstract class AbstractAnimal
 {
 	private int id;
 	private static int maxId = 0;
@@ -58,6 +58,6 @@ public class AbstractAnimal
 	{
 		return "eggs";
 	}
-	
-	public String move();
+
+	public abstract String move();
 }
