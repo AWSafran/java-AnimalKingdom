@@ -59,5 +59,14 @@ public class Main
 		{
 			System.out.println(a.getYear() + ": " + a.getName());
 		}
+
+		System.out.println("\nList all animals alphabetically\n");
+
+		allAnimals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+
+		for(AbstractAnimal a : allAnimals)
+		{
+			System.out.println(a.getName());
+		}
 	}
 } 
